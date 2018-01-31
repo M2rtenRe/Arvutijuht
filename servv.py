@@ -3,7 +3,7 @@ import sys
 import getopt
 import os
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 host = input("Kohalik IP: ")
 port = input("Port: ")
 port = int(port)
@@ -20,7 +20,7 @@ import os
 import requests
 from platform import *
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 host = """+'"'+host+'"'+"""
 port = """+str(port)+"""
 
