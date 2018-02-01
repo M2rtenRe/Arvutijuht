@@ -1,9 +1,10 @@
+#Kui arvuti avab client.py, siis saab selle failiga seda kontrollida. Seda programmi ei tohiks kurjadel eesmärkidel kasutada ;)
 import socket
 import sys
 import getopt
 import os
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s = socket.socket(socket.SOCK_DGRAM)
 host = input("Kohalik IP: ")
 port = input("Port: ")
 port = int(port)
@@ -69,3 +70,4 @@ while True:
       #kui klient saadab nõusoleku, et fail on saadetud, prindi see nõusolek ekraanile
       if data == "Saadan faili":
          print("Fail saadetud!")
+
