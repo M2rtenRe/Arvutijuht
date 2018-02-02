@@ -109,9 +109,12 @@ while True:
        print('Uhendasin', addr)
        print("Kirjuta 'os', et näha informatsiooni juhitava arvuti kohta")
        print("Kirjuta 'ssend:[url]', et saata fail internetist")
+       print("Kirjuta 'exit', et väljuda programmist")
        #kui ühendus on saadaval, siis võib kood alata
    else:
       q = input("$ ")
+      if q == "exit":
+         exit()
       c.send(q.encode())
       data = c.recv(4096).decode()
       print(data)
